@@ -47,3 +47,11 @@ function hasKeyValue(key, value, map) {
   return false;
 }
 console.log(hasKeyValue(23, "34", map));
+
+// Indexing
+console.log([...map.entries()][2]);
+
+// other way of indexing
+const keyValues = [];
+map.forEach((value, key) => keyValues.push([key, value]));
+console.log(keyValues);
