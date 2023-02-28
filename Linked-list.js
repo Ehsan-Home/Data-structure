@@ -21,16 +21,24 @@ function push(head, value) {
 }
 
 function pop(head) {
+  if (!head) {
+    return null;
+  }
+  if (!head.next) {
+    return null;
+  }
+
   let curr = head;
   let next = head.next;
-
-  if (!next) {
-  }
 
   while (next.next) {
     curr = curr.next;
     next = next.next;
   }
+
+  curr.next = null;
+  next = null;
+  return head;
 }
 
 function Print(head) {
@@ -57,5 +65,8 @@ push(head, 3);
 push(head, 2);
 push(head, 12);
 push(head, 44);
+
+head = pop(head);
+head = pop(head);
 
 Print(head);
