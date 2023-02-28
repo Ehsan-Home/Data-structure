@@ -11,6 +11,10 @@ class Stack {
     return this.arr.pop();
   }
 
+  top() {
+    return this.arr[this.arr.length - 1];
+  }
+
   print() {
     for (let i = this.arr.length - 1; i >= 0; i--) {
       console.log(this.arr[i]);
@@ -33,3 +37,4 @@ stack.pop();
 stack.pop();
 
 stack.print();
+console.log("top:", stack.top());
