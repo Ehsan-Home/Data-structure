@@ -3,12 +3,16 @@ class Queue {
     this.arr = [];
   }
 
-  push(item) {
+  enqueue(item) {
     this.arr.push(item);
   }
 
-  shift() {
+  dequeue() {
     return this.arr.shift();
+  }
+
+  peek() {
+    return this.arr[0];
   }
 
   print() {
@@ -17,13 +21,13 @@ class Queue {
 }
 
 let queue = new Queue();
-queue.push(3);
-queue.push(4);
-queue.push(2);
-queue.push(-10);
-queue.push(90);
+queue.enqueue(3);
+queue.enqueue(4);
+queue.enqueue(2);
+queue.enqueue(-10);
+queue.enqueue(90);
 
-queue.shift();
-queue.shift();
+queue.dequeue();
+queue.dequeue();
 
 queue.print();
