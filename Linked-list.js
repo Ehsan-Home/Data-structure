@@ -26,6 +26,33 @@ function unshift(head, value) {
   return temp;
 }
 
+// 2 -> 3 -> 5c -> 6nc -> null(nc)
+// counter = 0
+// index = 4, value = 7
+function add(head, value, index) {
+  let curr = head;
+  let nextCurr = head.next;
+
+  let counter = 0;
+  while (counter < index - 1) {
+    if (!curr) {
+      return -1;
+    }
+    // if (!nextCurr) {
+    //   break;
+    // }
+    counter++;
+    curr = curr.next;
+    nextCurr = nextCurr.next;
+  }
+
+  let newNode = new node(value);
+  newNode.next = nextCurr;
+  curr.next = newNode;
+
+  return 1;
+}
+
 function pop(head) {
   if (!head) {
     return null;
