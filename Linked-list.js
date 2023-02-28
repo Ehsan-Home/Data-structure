@@ -20,6 +20,12 @@ function push(head, value) {
   return head;
 }
 
+function unshift(head, value) {
+  let temp = new node(value);
+  temp.next = head;
+  return temp;
+}
+
 function pop(head) {
   if (!head) {
     return null;
@@ -61,12 +67,17 @@ function Print(head) {
 let head = null;
 
 head = push(head, 5);
-push(head, 3);
-push(head, 2);
-push(head, 12);
-push(head, 44);
+head = unshift(head, 4);
+head = unshift(head, 6);
+head = unshift(head, 15);
+head = unshift(head, 23);
+head = unshift(head, 25);
+// push(head, 3);
+// push(head, 2);
+// push(head, 12);
+// push(head, 44);
 
-head = pop(head);
-head = pop(head);
+// head = pop(head);
+// head = pop(head);
 
 Print(head);
