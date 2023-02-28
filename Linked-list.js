@@ -5,7 +5,11 @@ class node {
   }
 }
 
-function addNode(head, value) {
+function push(head, value) {
+  if (!head) {
+    head = new node(value);
+    return head;
+  }
   let temp = head;
 
   while (temp.next) {
@@ -13,9 +17,23 @@ function addNode(head, value) {
   }
 
   temp.next = new node(value);
+  return head;
 }
 
-function print(head) {
+function pop(head) {
+  let curr = head;
+  let next = head.next;
+
+  if (!next) {
+  }
+
+  while (next.next) {
+    curr = curr.next;
+    next = next.next;
+  }
+}
+
+function Print(head) {
   let temp = head;
 
   while (temp) {
@@ -24,10 +42,20 @@ function print(head) {
   }
 }
 
-const head = new node(4);
-addNode(head, 5);
-addNode(head, 3);
-addNode(head, 2);
-addNode(head, 12);
+// const head = new node(4);
+// push(head, 5);
+// push(head, 3);
+// push(head, 2);
+// push(head, 12);
 
-print(print(head));
+// print(head);
+
+let head = null;
+
+head = push(head, 5);
+push(head, 3);
+push(head, 2);
+push(head, 12);
+push(head, 44);
+
+Print(head);
