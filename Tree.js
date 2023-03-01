@@ -89,6 +89,25 @@ function getHeight(root) {
   return Math.max(1 + getHeight(root.right), 1 + getHeight(root.left));
 }
 
+function isBinarySearchTree(root) {
+  if (!root) {
+    return true;
+  }
+
+  if (root.right) {
+    if (root.value > root.right.value) {
+      return false;
+    }
+  }
+  if (root.left) {
+    if (root.value < root.left.value) {
+      return false;
+    }
+  }
+
+  return isBinarySearchTree(root.left) && isBinarySearchTree(root.right);
+}
+
 let root = new Node(5);
 addNode(root, 7);
 addNode(root, 3);
@@ -98,4 +117,10 @@ addNode(root, 4);
 addNode(root, 1);
 addNode(root, 90);
 
-console.log(getHeight(root));
+let root2 = new Node(5);
+root2.left = new Node(2);
+root2.right = new Node(8);
+root2.left.right = new Node(10);
+root2.right.right = new Node(20);
+
+console.log(isBinarySearchTree(root2));
