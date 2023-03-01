@@ -81,6 +81,14 @@ function hasValue(root, value) {
   }
 }
 
+function getHeight(root) {
+  if (!root) {
+    return -1;
+  }
+
+  return Math.max(1 + getHeight(root.right), 1 + getHeight(root.left));
+}
+
 let root = new Node(5);
 addNode(root, 7);
 addNode(root, 3);
@@ -88,5 +96,6 @@ addNode(root, 9);
 addNode(root, 6);
 addNode(root, 4);
 addNode(root, 1);
+addNode(root, 90);
 
-console.log(hasValue(root, 16));
+console.log(getHeight(root));
