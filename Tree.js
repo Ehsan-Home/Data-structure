@@ -67,6 +67,20 @@ function DFSPostOrder(root) {
   console.log(root.value);
 }
 
+function hasValue(root, value) {
+  if (!root) {
+    return false;
+  }
+
+  if (root.value === value) {
+    return true;
+  } else if (value > root.value) {
+    return hasValue(root.right, value);
+  } else {
+    return hasValue(root.left, value);
+  }
+}
+
 let root = new Node(5);
 addNode(root, 7);
 addNode(root, 3);
@@ -75,4 +89,4 @@ addNode(root, 6);
 addNode(root, 4);
 addNode(root, 1);
 
-DFSPostOrder(root);
+console.log(hasValue(root, 16));
