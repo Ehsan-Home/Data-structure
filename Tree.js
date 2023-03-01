@@ -39,7 +39,15 @@ function BFS(root) {
   }
 }
 
-function DFS(root) {}
+function DFSPreOrder(root) {
+  if (!root) {
+    return;
+  }
+
+  DFSPreOrder(root.left);
+  console.log(root.value);
+  DFSPreOrder(root.right);
+}
 
 let root = new Node(5);
 addNode(root, 7);
@@ -49,4 +57,4 @@ addNode(root, 6);
 addNode(root, 4);
 addNode(root, 1);
 
-BFS(root);
+DFSPreOrder(root);
