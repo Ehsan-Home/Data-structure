@@ -26,8 +26,6 @@ function quickSort(arr, start = 0, finish = arr.length - 1) {
   arr[leftPointer] = arr[pivotIndex];
   arr[pivotIndex] = temp;
 
-  console.log("***");
-
   quickSort(arr, start, leftPointer - 1);
   quickSort(arr, leftPointer + 1, finish);
 }
