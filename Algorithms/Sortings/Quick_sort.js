@@ -30,6 +30,6 @@ function quickSort(arr, start = 0, finish = arr.length - 1) {
   quickSort(arr, leftPointer + 1, finish);
 }
 
-let arr = [9, 3, -10, 3, 14, 4];
+let arr = [17, 19, 20, 21, 15];
 quickSort(arr);
 console.log(arr);
