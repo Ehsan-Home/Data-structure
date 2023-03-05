@@ -14,7 +14,7 @@ function quickSort(arr, start = 0, finish = arr.length - 1) {
       arr[leftPointer] = arr[rightPointer];
       arr[rightPointer] = temp;
     }
-    if (arr[leftPointer] < pivot) {
+    if (arr[leftPointer] <= pivot) {
       leftPointer++;
     }
     if (arr[rightPointer] >= pivot) {
@@ -30,6 +30,6 @@ function quickSort(arr, start = 0, finish = arr.length - 1) {
   quickSort(arr, leftPointer + 1, finish);
 }
 
-let arr = [17, 19, 20, 21, 15];
+let arr = [3, 2, 1, 3, 2, 1];
 quickSort(arr);
 console.log(arr);
